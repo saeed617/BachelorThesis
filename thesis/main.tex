@@ -1,0 +1,63 @@
+\documentclass{article}
+% Input & Setup packages and commands needed
+\input{packages}
+
+% Input data needed for titlepage from title.tex file
+\input{title}
+
+\begin{document}
+
+% title page with no numbering
+\begin{titlepage}
+    \clearpage\maketitle
+    \thispagestyle{empty}
+\end{titlepage}
+\newpage\thispagestyle{empty}
+
+% empty page
+%\newpage\null\thispagestyle{empty}\newpage
+
+\input{besm}
+
+\input{davaran}
+\input{esalat}
+\input{mojavez}
+% change numbering style
+\pagenumbering{harfi}
+
+
+% input data of summary page
+\input{summary}
+
+
+% Set table of contents
+\tableofcontents
+\thispagestyle{empty}
+\cleardoublepage
+
+%Set table of figures
+\listoffigures
+\addcontentsline{toc}{section}{\numberline{} فهرست تصاویر}
+\cleardoublepage
+
+% Set table of tables
+\listoftables
+\addcontentsline{toc}{section}{\numberline{} فهرست جداول}
+\cleardoublepage
+
+% reset page numbering to arabic
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{chapters/ch1-intro}
+\input{chapters/ch2-sources}
+\input{chapters/ch3-implementation}
+\input{chapters/ch4-results}
+\input{chapters/ch5-recommendations}
+
+
+\bibliographystyle{IEEEtran}
+\setLTRbibitems
+\addcontentsline{toc}{section}{\numberline{} مراجع}
+
+\end{document} 
